@@ -202,6 +202,15 @@ export const useVoiceTutor = () => {
             // 1. If muted, completely stop sending data.
             if (isMutedRef.current) return;
 
+            // If the AI is actively speaking (or queued to speak) through the speakers,
+            // drop the mic data completely to prevent an infinite Echo Loop!
+            if (playbackSourcesRef.current.size > 0) {
+              silenceCount = 0;
+              isSpeaking = false;
+              turnEndingRef.current = false;
+              return; 
+            }
+
             const inputData = e.inputBuffer.getChannelData(0);
             
             // 2. Check how loud the user is currently speaking

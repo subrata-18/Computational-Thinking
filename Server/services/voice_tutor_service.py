@@ -17,8 +17,8 @@ INPUT_AUDIO_MIME_TYPE = "audio/pcm;rate=16000"
 API_KEY = os.getenv("API_KEY1")
 
 # These limits intentionally prevent stale microphone audio from building up.
-INPUT_QUEUE_SIZE = 128
-OUTPUT_QUEUE_SIZE = 256
+INPUT_QUEUE_SIZE = 2048
+OUTPUT_QUEUE_SIZE = 8192
 
 # Polling avoids asyncio.to_thread(queue.get). Cancelling a to_thread call
 # does not reliably cancel the underlying blocking queue.get worker.
