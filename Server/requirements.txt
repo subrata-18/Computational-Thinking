@@ -1,10 +1,19 @@
+# --- Web Frameworks & Servers ---
 Flask
 Flask-SQLAlchemy
-python-dotenv
-psycopg2-binary
 flask-cors
-google-genai
-supabase
 gunicorn
+fastapi
+uvicorn[standard]
+
+# --- Gemini SDK ---
+google-genai[aiohttp]<3
+
+# --- Database & Auth ---
+psycopg2-binary
+supabase
 argon2-cffi
+python-dotenv
+
+# --- Legacy (Optional) ---
 flask-sock
