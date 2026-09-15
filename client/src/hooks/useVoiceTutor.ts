@@ -5,7 +5,7 @@ const getWebSocketUrl = (): string => {
     return import.meta.env.VITE_WS_URL;
   }
   const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-  return `${protocol}://${window.location.host}/VoiceTutor`;
+  return `${protocol}://${window.location.hostname}:8001/ws/voice`;
 };
 
 export const useVoiceTutor = () => {
