@@ -1,5 +1,5 @@
 /* ============================================================
-   STEPWISE PRISM AI — Mathematical Theme
+   PRISM AI — Maths, Science & Computer Science Theme
    Palette: deep navy bg · slate panels · indigo/violet accents
    All text on dark surfaces is light; all text on light is dark.
    ============================================================ */
@@ -21,7 +21,7 @@
   --muted:       #7d8590;   /* muted / placeholder */
   --subtle:      #484f58;   /* very subtle */
 
-  /* Accents — indigo / violet math palette */
+  /* Accents — indigo / violet palette (unchanged) */
   --accent:      #7c3aed;   /* indigo-600 */
   --accent-hi:   #8b5cf6;   /* violet-500 */
   --accent-glow: rgba(124, 58, 237, .28);
@@ -69,7 +69,7 @@ button, input { max-width: 100%; }
 .full  { width: 100%; }
 
 /* ================================================================
-   MATH FLOATING SYMBOLS — decorative layer behind content
+   MATH + SCIENCE + COMPUTER SCIENCE FLOATING SYMBOLS — decorative layer behind content
    ================================================================ */
 .math-bg {
   position: fixed;
@@ -80,7 +80,9 @@ button, input { max-width: 100%; }
   user-select: none;
 }
 
-.math-symbol {
+.math-symbol,
+.science-symbol,
+.cs-symbol {
   position: absolute;
   font-family: "Georgia", "Times New Roman", serif;
   font-style: italic;
