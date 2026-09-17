@@ -51,7 +51,7 @@ MAX_AUDIO_FRAME_BYTES = int(
     os.getenv("VOICE_MAX_AUDIO_FRAME_BYTES", str(64 * 1024)),
 )
 
-TURN_FINALIZATION_TIMEOUT_SECONDS = 5.0
+TURN_FINALIZATION_TIMEOUT_SECONDS = 30.0
 
 MAX_MEMORY_TURNS = 4
 MAX_MEMORY_FIELD_CHARS = 700
@@ -656,6 +656,8 @@ class VoiceSession:
                             await session.send_realtime_input(
                                 audio_stream_end=True,
                             )
+
+                            await session.send(end_of_turn=True)
 
                             # Critical invariant:
                             # stop consuming browser input immediately after
